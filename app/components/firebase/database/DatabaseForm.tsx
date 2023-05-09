@@ -12,13 +12,15 @@ interface FormData {
 }
 
 const DatabaseForm: NextPage<DatabaseFormProps> = () => {
-  const { register, handleSubmit } = useForm<FormData>();
+  const { register, handleSubmit, reset } = useForm<FormData>();
   const onSubmit = handleSubmit(async (data) => {
     await set(ref(db, 'users/'), {
       name: data.name,
       email: data.email,
       role: data.role,
     });
+    // delete register value
+    reset();
   });
   return (
     <form onSubmit={onSubmit} className="mt-5 container">
