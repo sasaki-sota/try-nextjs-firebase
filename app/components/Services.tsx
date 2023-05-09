@@ -1,6 +1,7 @@
 import { services } from '@/const';
 import { NextPage } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ServicesProps {}
 
@@ -25,10 +26,10 @@ const Services: NextPage<ServicesProps> = () => {
                 />
               </div>
               <h3 className="text-2xl mt-2 text-gray-700">
-                <a href={service.href}>
+                <Link href={service.href}>
                   <span aria-hidden="true" className="absolute inset-0" />
                   {service.name}
-                </a>
+                </Link>
               </h3>
             </div>
           ))}

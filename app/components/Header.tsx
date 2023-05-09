@@ -1,5 +1,6 @@
 import { services } from '@/const';
 import { NextPage } from 'next';
+import Link from 'next/link';
 
 interface HeaderProps {}
 
@@ -36,9 +37,11 @@ const Header: NextPage<HeaderProps> = () => {
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-            Learning Firebase
-          </h2>
+          <Link href={'/'}>
+            <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              Learning Firebase
+            </h2>
+          </Link>
           <p className="mt-6 text-lg leading-8 text-gray-300">
             This site has been created by souta tech blogs hands-on with
             Firebase.
@@ -47,9 +50,9 @@ const Header: NextPage<HeaderProps> = () => {
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
             {services.map((service) => (
-              <a key={service.name} href={service.href}>
+              <Link key={service.name} href={service.href}>
                 {service.name} <span aria-hidden="true">&rarr;</span>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
