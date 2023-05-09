@@ -14,5 +14,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // init database and emulator
-const db = getDatabase(app);
+export const db = getDatabase(app);
 connectDatabaseEmulator(db, 'localhost', 9000);
